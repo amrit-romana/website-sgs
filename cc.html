@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>Creative Cloud</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="images/sgs-website-favicon-color.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat:300,400,700%7CPoppins:300,400,500,700,900">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}
+    @import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
+/* This pen */
+
+
+
+.light {
+  background: #f3f5f7;
+}
+
+a, a:hover {
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+#pageHeaderTitle {
+  margin: 2rem 0;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+/* Cards */
+.postcard {
+  flex-wrap: wrap;
+  display: flex;
+  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+  border-radius: 10px;
+  margin: 0 0 2rem 0;
+  overflow: hidden;
+  position: relative;
+  color: #ffffff;
+}
+.postcard.dark {
+  background-color: #18151f;
+}
+.postcard.light {
+  background-color: #e1e5ea;
+}
+.postcard .t-dark {
+  color: #18151f;
+}
+.postcard a {
+  color: inherit;
+}
+.postcard h1, .postcard .h1 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.postcard .small {
+  font-size: 80%;
+}
+.postcard .postcard__title {
+  font-size: 1.75rem;
+}
+.postcard .postcard__img {
+  max-height: 180px;
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.postcard .postcard__img_link {
+  display: contents;
+}
+.postcard .postcard__bar {
+  width: 50px;
+  height: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background-color: #424242;
+  transition: width 0.2s ease;
+}
+.postcard .postcard__text {
+  padding: 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.postcard .postcard__preview-txt {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: justify;
+  height: 100%;
+}
+.postcard .postcard__tagbox {
+  display: flex;
+  flex-flow: row wrap;
+  font-size: 14px;
+  margin: 20px 0 0 0;
+  padding: 0;
+  justify-content: center;
+}
+.postcard .postcard__tagbox .tag__item {
+  display: inline-block;
+  background: rgba(83, 83, 83, 0.4);
+  border-radius: 3px;
+  padding: 2.5px 10px;
+  margin: 0 5px 5px 0;
+  cursor: default;
+  user-select: none;
+  transition: background-color 0.3s;
+}
+.postcard .postcard__tagbox .tag__item:hover {
+  background: rgba(83, 83, 83, 0.8);
+}
+.postcard:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(-70deg, #424242, transparent 50%);
+  opacity: 1;
+  border-radius: 10px;
+}
+.postcard:hover .postcard__bar {
+  width: 100px;
+}
+
+@media screen and (min-width: 769px) {
+  .postcard {
+    flex-wrap: inherit;
+  }
+  .postcard .postcard__title {
+    font-size: 2rem;
+  }
+  .postcard .postcard__tagbox {
+    justify-content: start;
+  }
+  .postcard .postcard__img {
+    max-width: 300px;
+    max-height: 100%;
+    transition: transform 0.3s ease;
+  }
+  .postcard .postcard__text {
+    padding: 3rem;
+    width: 100%;
+  }
+  .postcard .media.postcard__text:before {
+    content: "";
+    position: absolute;
+    display: block;
+    background: #18151f;
+    top: -20%;
+    height: 130%;
+    width: 55px;
+  }
+  .postcard:hover .postcard__img {
+    transform: scale(1.1);
+  }
+  .postcard:nth-child(2n+1) {
+    flex-direction: row;
+  }
+  .postcard:nth-child(2n+0) {
+    flex-direction: row-reverse;
+  }
+  .postcard:nth-child(2n+1) .postcard__text::before {
+    left: -12px !important;
+    transform: rotate(4deg);
+  }
+  .postcard:nth-child(2n+0) .postcard__text::before {
+    right: -12px !important;
+    transform: rotate(-4deg);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .postcard__text {
+    padding: 2rem 3.5rem;
+  }
+
+  .postcard__text:before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: -20%;
+    height: 130%;
+    width: 55px;
+  }
+
+  .postcard.dark .postcard__text:before {
+    background: #18151f;
+  }
+
+  .postcard.light .postcard__text:before {
+    background: #e1e5ea;
+  }
+}
+/* COLORS */
+.postcard .postcard__tagbox .green.play:hover {
+  background: #79dd09;
+  color: black;
+}
+
+.green .postcard__title:hover {
+  color: #79dd09;
+}
+
+.green .postcard__bar {
+  background-color: #79dd09;
+}
+
+.green::before {
+  background-image: linear-gradient(-30deg, rgba(121, 221, 9, 0.1), transparent 50%);
+}
+
+.green:nth-child(2n)::before {
+  background-image: linear-gradient(30deg, rgba(121, 221, 9, 0.1), transparent 50%);
+}
+
+.postcard .postcard__tagbox .blue.play:hover {
+  background: #0076bd;
+}
+
+.blue .postcard__title:hover {
+  color: #0076bd;
+}
+
+.blue .postcard__bar {
+  background-color: #0076bd;
+}
+
+.blue::before {
+  background-image: linear-gradient(-30deg, rgba(0, 118, 189, 0.1), transparent 50%);
+}
+
+.blue:nth-child(2n)::before {
+  background-image: linear-gradient(30deg, rgba(0, 118, 189, 0.1), transparent 50%);
+}
+
+.postcard .postcard__tagbox .red.play:hover {
+  background: #bd150b;
+}
+
+.red .postcard__title:hover {
+  color: #bd150b;
+}
+
+.red .postcard__bar {
+  background-color: #bd150b;
+}
+
+.red::before {
+  background-image: linear-gradient(-30deg, rgba(189, 21, 11, 0.1), transparent 50%);
+}
+
+.red:nth-child(2n)::before {
+  background-image: linear-gradient(30deg, rgba(189, 21, 11, 0.1), transparent 50%);
+}
+
+.postcard .postcard__tagbox .yellow.play:hover {
+  background: #bdbb49;
+  color: black;
+}
+
+.yellow .postcard__title:hover {
+  color: #bdbb49;
+}
+
+.yellow .postcard__bar {
+  background-color: #bdbb49;
+}
+
+.yellow::before {
+  background-image: linear-gradient(-30deg, rgba(189, 187, 73, 0.1), transparent 50%);
+}
+
+.yellow:nth-child(2n)::before {
+  background-image: linear-gradient(30deg, rgba(189, 187, 73, 0.1), transparent 50%);
+}
+
+@media screen and (min-width: 769px) {
+  .green::before {
+    background-image: linear-gradient(-80deg, rgba(121, 221, 9, 0.1), transparent 50%);
+  }
+
+  .green:nth-child(2n)::before {
+    background-image: linear-gradient(80deg, rgba(121, 221, 9, 0.1), transparent 50%);
+  }
+
+  .blue::before {
+    background-image: linear-gradient(-80deg, rgba(0, 118, 189, 0.1), transparent 50%);
+  }
+
+  .blue:nth-child(2n)::before {
+    background-image: linear-gradient(80deg, rgba(0, 118, 189, 0.1), transparent 50%);
+  }
+
+  .red::before {
+    background-image: linear-gradient(-80deg, rgba(189, 21, 11, 0.1), transparent 50%);
+  }
+
+  .red:nth-child(2n)::before {
+    background-image: linear-gradient(80deg, rgba(189, 21, 11, 0.1), transparent 50%);
+  }
+
+  .yellow::before {
+    background-image: linear-gradient(-80deg, rgba(189, 187, 73, 0.1), transparent 50%);
+  }
+
+  .yellow:nth-child(2n)::before {
+    background-image: linear-gradient(80deg, rgba(189, 187, 73, 0.1), transparent 50%);
+  }
+}
+    </style>
+  </head>
+  <body>
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="preloader">
+      <div class="preloader-body">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+        <p>Loading...</p>
+      </div>
+    </div> <div class="page">
+      <header class="section page-header">
+        <!--RD Navbar-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
+            <div class="rd-navbar-aside-outer rd-navbar-collapse bg-gray-dark">
+              <div class="rd-navbar-aside">
+                <ul class="list-inline navbar-contact-list" style="color: white;">
+                  <li>
+                    <div class="unit unit-spacing-xs align-items-center">
+                      <div class="unit-left"><span class="icon text-middle fa-phone"></span></div>
+                      <div class="unit-body" ><a href="tel:+9108023415194" style="color: white;">+91 080 - 23415194</a></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="unit unit-spacing-xs align-items-center">
+                      <div class="unit-left"><span class="icon text-middle fa-envelope"></span></div>
+                      <div class="unit-body"><a href="mailto:info@shreejigs.com" style="color: white;">info@shreejigs.com</a></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="unit unit-spacing-xs align-items-center">
+                      <div class="unit-left"><span class="icon text-middle fa-map-marker"></span></div>
+                      <div class="unit-body"><a href="#" style="color: white;">No.11, FF2, 1st Floor, New Bel Road, RMV 2nd Stage, Bangalore – 560092</a></div>
+                    </div>
+                  </li>
+                </ul>
+                <ul class="social-links">
+                  <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-linkedin" href="#"></a></li>
+                  <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-twitter" href="#"></a></li>
+                  <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-facebook" href="#"></a></li>
+                  <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-instagram" href="#"></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="rd-navbar-main-outer">
+              <div class="rd-navbar-main">
+                <!--RD Navbar Panel-->
+                <div class="rd-navbar-panel">
+                  <!--RD Navbar Toggle-->
+                  <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                  <!--RD Navbar Brand-->
+                  <div class="rd-navbar-brand">
+                   <!--Brand--><a class="brand" href="index.html"><img class="brand-logo-dark" style="height:5rem;" src="images/sgs-low-resolution-logo-white-on-transparent-background.png" alt="" width="100" height="17"/><img class="brand-logo-light" src="images/sgs-low-resolution-logo-color-on-transparent-background.png" alt="" width="100" height="17"/></a>
+                </div>
+                </div>
+                <div class="rd-navbar-main-element">
+                  <div class="rd-navbar-nav-wrap">
+                    <ul class="rd-navbar-nav">
+                        <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="#"> 
+                          <div class="dropdown">
+                          <button class="dropbtn">Solutions</button>
+                          <div class="dropdown-content">
+                            <a href="Digitalm.html">Digital Marketing</a>
+                            <a href="cc.html">Creative Cloud</a>
+                            <a href="implementation.html">Implementation/Troubleshooting</a>
+                            <a href="translation.html">Translation Service</a>
+                          </div>
+                        </div>
+                      </a>
+                        </li>
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contacts</a>
+                        </li>
+                      </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <section class="section section-intro context-dark">
+        <div class="intro-bg" style="background-size:cover;background-position: top center;"></div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-xl-8 text-center">
+              <h1 class="font-weight-bold wow fadeInLeft">Creative Cloud</h1>
+              <h4 class="intro-description wow fadeInRight">Maximize Your Creativity with Creative Cloud</h4>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+
+    
+    
+    <section class="light">
+        <div class="container py-2">
+            <div class="h1 text-center text-dark" id="pageHeaderTitle">Some Of Our Best Works</div>
+    
+            <article class="postcard light blue">
+                <a class="postcard__img_link" href="#">
+                    <img class="postcard__img" src="images/bg-image-2-1700x257.jpg" alt="Image Title" />
+                </a>
+                <div class="postcard__text t-dark">
+                    <h1 class="postcard__title blue"><a href="#">Title</a></h1>
+                    <div class="postcard__subtitle small">
+                        <time datetime="2020-05-25 12:00:00">
+                            <i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
+                        </time>
+                    </div>
+                    <div class="postcard__bar"></div>
+                    <div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
+                    <ul class="postcard__tagbox">
+                        <li class="tag__item"><i class="fas fa-tag mr-2"></i>Advertisement</li>
+                        <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
+                        <!-- <li class="tag__item play blue">
+                            <a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
+                        </li> -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            Play Episode
+                          </button>
+                    </ul>
+                </div>
+            </article>
+         
+           
+            <article class="postcard light yellow">
+                <a class="postcard__img_link" href="#">
+                    <img class="postcard__img" src="images/bg-image-2-1700x257.jpg" alt="Image Title" />
+                </a>
+                <div class="postcard__text t-dark">
+                    <h1 class="postcard__title yellow"><a href="#">Title</a></h1>
+                    <div class="postcard__subtitle small">
+                        <time datetime="2020-05-25 12:00:00">
+                            <i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
+                        </time>
+                    </div>
+                    <div class="postcard__bar"></div>
+                    <div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
+                    <ul class="postcard__tagbox">
+                        <li class="tag__item"><i class="fas fa-tag mr-2"></i>Advertisement</li>
+                        <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
+                        <!-- <li class="tag__item play yellow">
+                            <a href="#"><i class="fas fa-play mr-2" ></i>Play Episode</a>
+                           
+
+                        </li> -->
+                        <button type="button" class="tag__item" data-toggle="modal" data-target="#exampleModal">
+                            Play Episode
+                          </button>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </section>
+
+      <br>
+      <br>
+     
+        
+     <!-- Footer<a class="section section-banner" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" target="_blank" style="background-image: url(images/background-01-1920x310.jpg); background-image: -webkit-image-set( url(images/background-01-1920x310.jpg) 1x, url(images/background-01-3840x620.jpg) 2x )"><img src="images/foreground-01-1600x310.png" srcset="images/foreground-01-1600x310.png 1x, images/foreground-01-3200x620.png 2x" alt="" width="1600" height="310"></a> -->
+     <footer class="section footer-classic section-sm">
+      <div class="container">
+        <div class="row row-30">
+          <div class="col-lg-3 wow fadeInLeft">
+              <!--Brand--><a class="brand" href="index.html"><img class="brand-logo-dark" style="height:5rem;" src="images/sgs-low-resolution-logo-white-on-transparent-background.png" alt="" width="100" height="17"/><img class="brand-logo-light" src="images/sgs-low-resolution-logo-color-on-transparent-background.png" alt="" width="100" height="17"/></a>
+              <p class="footer-classic-description offset-top-0 offset-right-25">Shreeji Global Services is an agency dedicated to finding creative solutions for our clients through brand strategy, creative communication, and technology.</p>
+          </div>
+          <div class="col-lg-3 col-sm-8 wow fadeInUp">
+            <P class="footer-classic-title">contact info</P>
+            <div class="d-block offset-top-0">No.11, FF2, 1st Floor, New Bel Road, RMV 2nd Stage,<span class="d-lg-block">Bangalore – 560092</span></div><a class="d-inline-block accent-link" href="mailto:info@shreejigs.com">info@shreejigs.com</a><a class="d-inline-block" href="tel:+91 080 23415194">+91 080 23415194</a>
+            <!-- <ul>
+              <li>Mon-Thu:<span class="d-inline-block offset-left-10 text-white">9:30 AM - 9:00 PM</span></li>
+              <li>Fri:<span class="d-inline-block offset-left-10 text-white">10:00 AM - 9:00 PM</span></li>
+              <li>Sat:<span class="d-inline-block offset-left-10 text-white">10:00 AM - 3:00 PM</span></li>
+            </ul> -->
+          </div>
+          <div class="col-lg-2 col-sm-4 wow fadeInUp" data-wow-delay=".3s">
+            <P class="footer-classic-title">Quick Links</P>
+            <ul class="footer-classic-nav-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="contacts.html">Contacts</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 wow fadeInLeft" data-wow-delay=".2s">
+            <P class="footer-classic-title">Book an Appointment</P>
+            <form class="rd-mailform text-left footer-classic-subscribe-form" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+              <!-- <div class="form-wrap">
+                <label class="form-label" for="subscribe-email">Your Email Address</label>
+                <input class="form-input" id="subscribe-email" type="email" name="email" data-constraints="@Email @Required">
+              </div> -->
+              <div class="form-button group-sm text-center text-lg-left">
+                <button class="button button-primary button-circle" type="submit">Click here</button>
+              </div>
+            </form>
+            <p>Get in touch with our experts.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container wow fadeInUp" data-wow-delay=".4s">
+        <div class="footer-classic-aside">
+          <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span>. All Rights Reserved by ShreeJi Global Services. Design by <a href="https://www.templatemonster.com">TemplateMonster</a></p>
+          <ul class="social-links">
+            <li><a class="fa fa-linkedin" href="#"></a></li>
+            <li><a class="fa fa fa-twitter" href="#"></a></li>
+            <li><a class="fa fa-facebook" href="#"></a></li>
+            <li><a class="fa fa-instagram" href="#"></a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog"aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Episode</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <!-- <iframe width="513" height="315" src="https://www.youtube.com/embed/lp_z_OoYvnY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+        </div>
+        <div class="modal-footer">
+         
+          <button type="button" class="btn btn-primary">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="snackbars" id="form-output-global"></div>
+  <script src="js/core.min.js"></script>
+  <script src="js/script.js"></script>
+  <!--coded by Drel-->
+  </body>
+</html>
