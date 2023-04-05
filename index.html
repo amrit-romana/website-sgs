@@ -10,7 +10,179 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
-    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+    <style>
+    /* .navbar input[type="checkbox"],
+.navbar .hamburger-lines{
+    display: none;
+}
+
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+
+.navbar{
+    box-shadow: 0px 5px 10px 0px #aaa;
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    color: #000;
+    opacity: 0.85;
+    z-index: 100;
+}
+
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    align-items: center;
+}
+
+.menu-items{
+    order: 2;
+    display: flex;
+}
+.logo{
+    order: 1;
+    font-size: 2.3rem;
+}
+
+.menu-items li{
+    list-style: none;
+    margin-left: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.navbar a{
+    color: #444;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar a:hover{
+    color: #117964;
+}
+
+@media (max-width: 768px){
+    .navbar{
+        opacity: 0.95;
+    }
+
+    .navbar-container input[type="checkbox"],
+    .navbar-container .hamburger-lines{
+        display: block;
+    }
+
+    .navbar-container{
+        display: block;
+        position: relative;
+        height: 64px;
+    }
+
+    .navbar-container input[type="checkbox"]{
+        position: absolute;
+        display: block;
+        height: 32px;
+        width: 30px;
+        top: 20px;
+        left: 20px;
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .navbar-container .hamburger-lines{
+        display: block;
+        height: 28px;
+        width: 35px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .navbar-container .hamburger-lines .line{
+        display: block;
+        height: 4px;
+        width: 100%;
+        border-radius: 10px;
+        background: #333;
+    }
+    
+    .navbar-container .hamburger-lines .line1{
+        transform-origin: 0% 0%;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .navbar-container .hamburger-lines .line2{
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .navbar-container .hamburger-lines .line3{
+        transform-origin: 0% 100%;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .navbar .menu-items{
+        padding-top: 100px;
+        background: #fff;
+        height: 100vh;
+        max-width: 300px;
+        transform: translate(-150%);
+        display: flex;
+        flex-direction: column;
+        margin-left: -40px;
+        padding-left: 40px;
+        transition: transform 0.5s ease-in-out;
+        box-shadow:  5px 0px 10px 0px #aaa;
+        overflow: scroll;
+    }
+
+    .navbar .menu-items li{
+        margin-bottom: 1.8rem;
+        font-size: 20px;
+        
+    }
+
+    .logo{
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 2.5rem;
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .menu-items{
+        transform: translateX(0);
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1{
+        transform: rotate(45deg);
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2{
+        transform: scaleY(0);
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3{
+        transform: rotate(-45deg);
+    }
+
+}
+
+@media (max-width: 500px){
+    .navbar-container input[type="checkbox"]:checked ~ .logo{
+        display: none;
+    }
+} */
+    .ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}
+    
+    
+    </style>
   </head>
   <body>
     <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
@@ -24,129 +196,139 @@
         </div>
       </div><a class="section section-banner d-none d-xl-block" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" target="_blank" style="background-image: url(images/background-02-1920x60.jpg); background-image: -webkit-image-set( url(images/background-02-1920x60.jpg) 1x, url(images/background-02-3840x120.jpg) 2x )"></a>
       <div class="page">
-        <header class="section page-header">
-          <!--RD Navbar-->
-          <div class="rd-navbar-wrap">
-            <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
-              <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
-              <div class="rd-navbar-aside-outer rd-navbar-collapse bg-gray-dark">
-                <div class="rd-navbar-aside">
-                  <ul class="list-inline navbar-contact-list" style="color: white;">
-                    <li>
-                      <div class="unit unit-spacing-xs align-items-center">
-                        <div class="unit-left"><span class="icon text-middle fa-phone"></span></div>
-                        <div class="unit-body" ><a href="tel:+9108023415194" style="color: white;">+91 080 - 23415194</a></div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="unit unit-spacing-xs align-items-center">
-                        <div class="unit-left"><span class="icon text-middle fa-envelope"></span></div>
-                        <div class="unit-body"><a href="mailto:info@shreejigs.com" style="color: white;">info@shreejigs.com</a></div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="unit unit-spacing-xs align-items-center">
-                        <div class="unit-left"><span class="icon text-middle fa-map-marker"></span></div>
-                        <div class="unit-body"><a href="#" style="color: white;">No.11, FF2, 1st Floor, New Bel Road, RMV 2nd Stage, Bangalore – 560092</a></div>
-                      </div>
-                    </li>
-                  </ul>
-                  <ul class="social-links">
-                    <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-linkedin" href="#"></a></li>
-                    <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-twitter" href="#"></a></li>
-                    <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-facebook" href="#"></a></li>
-                    <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-instagram" href="#"></a></li>
-                  </ul>
-                </div>
+        <!-- <nav class="navbar">
+          <div class="navbar-container container">
+              <input type="checkbox" name="" id="">
+              <div class="hamburger-lines">
+                  <span class="line line1"></span>
+                  <span class="line line2"></span>
+                  <span class="line line3"></span>
               </div>
-              <div class="rd-navbar-main-outer">
-                <div class="rd-navbar-main">
-                  <!--RD Navbar Panel-->
-                  <div class="rd-navbar-panel">
-                    <!--RD Navbar Toggle-->
-                    <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
-                    <!--RD Navbar Brand-->
-                    <div class="rd-navbar-brand">
-                       <!--Brand--><a class="brand" href="index.html"><img class="brand-logo-dark" style="height:5rem;" src="images/sgs-low-resolution-logo-white-on-transparent-background.png" alt="" width="100" height="17"/><img class="brand-logo-light" src="images/sgs-low-resolution-logo-color-on-transparent-background.png" alt="" width="100" height="17"/></a>
-                  </div>
-                  </div>
-                  <div class="rd-navbar-main-element">
-                    <div class="rd-navbar-nav-wrap">
-                      <ul class="rd-navbar-nav">
-                        <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">About</a>
-                        </li>
-                        <li class="rd-nav-item"><a class="rd-nav-link" href="#"> 
-                          <div class="dropdown">
-                          <button class="dropbtn">Solutions</button>
-                          <div class="dropdown-content">
-                            <a href="Digitalm.html">Digital Marketing</a>
-                            <a href="translation.html">Translation Service</a>
-                            <a href="implementation.html">Implementation/Troubleshooting</a>
-                            <a href="cc.html">Creative Cloud</a>
-                          </div>
-                        </div>
-                      </a>
-                        </li>
-                        <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contacts</a>
-                        </li>
-                      </ul>
+              <ul class="menu-items">
+                  <li><a href="#" class="active">Home</a></li>
+                  <li><a href="#">About</a></li>
+                  
+                  
+                  <li><a href="#">Contact</a></li>
+              </ul>
+              <h1 class="logo"><img style="height: 50px;" src="images/sgs-low-resolution-logo-black-on-transparent-background.png" alt=""></h1>
+          </div>
+      </nav> -->
+      
+      <header class="section page-header">
+        <!--RD Navbar-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
+            <div class="rd-navbar-aside-outer rd-navbar-collapse bg-gray-dark">
+              <div class="rd-navbar-aside">
+                <ul class="list-inline navbar-contact-list" style="color: white;padding: 15px;">
+                  <li>
+                    <div class="unit unit-spacing-xs align-items-center">
+                      <div class="unit-left"><span class="icon text-middle fa-phone"></span></div>
+                      <div class="unit-body" ><a href="tel:+9108023415194" style="color: white;">+91 080 - 23415194</a></div>
                     </div>
+                  </li>
+                  <li>
+                    <div class="unit unit-spacing-xs align-items-center">
+                      <div class="unit-left"><span class="icon text-middle fa-envelope"></span></div>
+                      <div class="unit-body"><a href="mailto:info@shreejigs.com" style="color: white;">info@shreejigs.com</a></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="unit unit-spacing-xs align-items-center">
+                      <div class="unit-left"><span class="icon text-middle fa-map-marker"></span></div>
+                      <div class="unit-body"><a href="#" style="color: white;"># 2,  3rd Floor. RMV 2nd Stage, Bangalore – 560092</a></div>
+                    </div>
+                  </li>
+                </ul>
+              
+              </div>
+            </div>
+            <div class="rd-navbar-main-outer">
+              <div class="rd-navbar-main">
+                <!--RD Navbar Panel-->
+                <div class="rd-navbar-panel">
+                  <!--RD Navbar Toggle-->
+                  <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                  <!--RD Navbar Brand-->
+                  <div class="rd-navbar-brand">
+                     <!--Brand--><a class="brand" href="index.html"><img class="brand-logo-dark" style="height:50px;" src="images/sgs-high-resolution-logo-color-on-transparent-background.png" alt="" width="100" height="17"/><img class="brand-logo-light" src="images/sgs-low-resolution-logo-color-on-transparent-background.png" alt="" width="100" height="17"/></a>
+                </div>
+                </div>
+                <div class="rd-navbar-main-element">
+                  <div class="rd-navbar-nav-wrap">
+                    <ul class="rd-navbar-nav">
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
+                      </li>
+                      <li class="rd-nav-item "><a class="rd-nav-link" href="about.html">About</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="#"> 
+                        <div class="dropdown">
+                          <a class="rd-nav-link" href="#">solutions</a>
+                        <div class="dropdown-content">
+                          <a href="Digitalm.html">DIGITAL MARKETING</a>
+                          <a href="translation.html">TRANSLATION SERVICES</a>
+                          <a href="implementation.html">DAIGNOSING/TROUBLESHOOTING</a>
+                          <!-- <a href="cc.html">Creative Cloud</a> -->
+                        </div>
+                      </div>
+                    </a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contacts</a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
-            </nav>
+            </div>
+          </nav>
+        </div>
+      </header>
+        <section class="section main-section parallax-scene-js" style="background-color: #9966CB; background-size:cover;">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-xl-8 col-12">
+                <div class="main-decorated-box text-center text-xl-left">
+                  <h1 class="text-white text-xl-center wow slideInRight" data-wow-delay=".3s"><span class="align-top offset-top-30 d-inline-block font-weight-light prefix-text">the</span><span class="big font-weight-bold d-inline-flex offset-right-170">best</span><span class="biggest d-block d-xl-flex font-weight-bold">Solutions.</span></h1>
+                  <div class="decorated-subtitle text-italic text-white wow slideInLeft">Fresh Ideas for Your Business</div>
+                </div>
+              </div>
+              <div class="col-12 text-center offset-top-75" data-wow-delay=".2s"><a class="button-way-point d-inline-block text-center d-inline-flex flex-column justify-content-center" href="#" data-custom-scroll-to="serv"><span class="fa-chevron-down"></span></a></div>
+            </div>
           </div>
-        </header>
-      <!--Main section-->
-      <section class="section main-section parallax-scene-js" style="background-color: #9966cb; background-size:cover;">
-        
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-xl-8 col-12">
-              <div class="main-decorated-box text-center text-xl-left">
-                <h1 class="text-white text-xl-center wow slideInRight" data-wow-delay=".3s"><span class="align-top offset-top-30 d-inline-block font-weight-light prefix-text">The</span><span class="big font-weight-bold d-inline-flex offset-right-170">Best</span><span class="biggest d-block d-xl-flex font-weight-bold"> Solutions.</span></h1>
-                <div class="decorated-subtitle text-italic text-white wow slideInLeft">Amplify Your Brand's Reach with our Innovative Marketing Strategies!</div>
+          <div class="decorate-layer">
+            <div class="layer-1">
+              <div class="layer" data-depth=".20"><img src="images/parallax-item-1-563x532.png" alt="" width="563" height="266"/>
               </div>
             </div>
-            <div class="col-12 text-center offset-top-75" data-wow-delay=".2s"><a class="button-way-point d-inline-block text-center d-inline-flex flex-column justify-content-center" href="#" data-custom-scroll-to="services"><span class="fa-chevron-down"></span></a></div>
-          </div>
-        </div>
-        <div class="decorate-layer">
-          <div class="layer-1">
-            <div class="layer" data-depth=".20"><img src="images/parallax-item-1-563x532.png" alt="" width="563" height="266"/>
+            <div class="layer-2">
+              <div class="layer" data-depth=".30"><img src="images/parallax-item-2-276x343.png" alt="" width="276" height="171"/>
+              </div>
+            </div>
+            <div class="layer-3">
+              <div class="layer" data-depth=".40"><img src="images/parallax-item-3-153x144.png" alt="" width="153" height="72"/>
+              </div>
+            </div>
+            <div class="layer-4">
+              <div class="layer" data-depth=".20"><img src="images/parallax-item-4-69x74.png" alt="" width="69" height="37"/>
+              </div>
+            </div>
+            <div class="layer-5">
+              <div class="layer" data-depth=".40"><img src="images/parallax-item-5-72x75.png" alt="" width="72" height="37"/>
+              </div>
+            </div>
+            <div class="layer-6">
+              <div class="layer" data-depth=".30"><img src="images/parallax-item-6-45x54.png" alt="" width="45" height="27"/>
+              </div>
             </div>
           </div>
-          <div class="layer-2">
-            <div class="layer" data-depth=".30"><img src="images/parallax-item-2-276x343.png" alt="" width="276" height="171"/>
-            </div>
-          </div>
-          <div class="layer-3">
-            <div class="layer" data-depth=".40"><img src="images/parallax-item-3-153x144.png" alt="" width="153" height="72"/>
-            </div>
-          </div>
-          <div class="layer-4">
-            <div class="layer" data-depth=".20"><img src="images/parallax-item-4-69x74.png" alt="" width="69" height="37"/>
-            </div>
-          </div>
-          <div class="layer-5">
-            <div class="layer" data-depth=".40"><img src="images/parallax-item-5-72x75.png" alt="" width="72" height="37"/>
-            </div>
-          </div>
-          <div class="layer-6">
-            <div class="layer" data-depth=".30"><img src="images/parallax-item-6-45x54.png" alt="" width="45" height="27"/>
-            </div>
-          </div>
-        
-      </div>
-      </section>
-      <p id="services"></p>
-      <br>
-      <br>
-
+        </section>
+    
+      <p ></p>
+     
        <!--Services-->
-       <section  class="section section-md bg-xs-overlay">
+       <section id="serv" class="section section-md bg-xs-overlay" >
         <div class="container">
           <div class="row row-50 justify-content-center">
             <div class="col-12 text-center col-md-10 col-lg-8">
@@ -159,44 +341,44 @@
             <div class="col-xl-4 col-md-6 col-12 wow fadeInDown" data-wow-delay=".3s">
               <div class="pricing-box bg-gray-dark">
                 <div class="pricing-box-tittle">Digital Marketing</div>
-                <p>Perfect for startups</p>
+
                 <hr/>
                 <!-- <div class="pricing-box-inner"><span class="pricing-box-symbol">$</span><span class="pricing-box-price">39</span></div>
                 <div class="pricing-box-label bg-gray">MONTHLY</div> -->
-                <p>Achieve a competitive advantage and maintain market leadership through our cost-effective, focused, and effective marketing plan based on scientific principles.</p><a class="button button-190 button-circle btn-primary-rounded" href="#">Read More</a>
+                <p>Achieve a competitive advantage and maintain market leadership through our cost-effective, focused, and effective marketing plan based on scientific principles.</p><a class="button button-190 button-circle btn-primary-rounded" href="Digitalm.html">Read More</a>
               </div>
             </div>
 
-            <div class="col-xl-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".4s">
+            <!-- <div class="col-xl-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".4s">
               <div class="pricing-box bg-gray-primary">
                 <div class="pricing-box-tittle">Creative Cloud</div>
                 <p>Designed for medium businesses</p>
-                <hr/>
+                <hr/> -->
                 <!-- <div class="pricing-box-inner"><span class="pricing-box-symbol">$</span><span class="pricing-box-price">69</span></div>
                 <div class="pricing-box-label bg-gray-primary-light">MONTHLY</div> -->
-                <p>Our team of expert video editors, animators, and graphic designers work with you to create high-quality promotional videos that effectively showcase your brand.</p><a class="button button-190 button-circle btn-rounded-outline" href="#">Read More</a>
+                <!-- <p>Our team of expert video editors, animators, and graphic designers work with you to create high-quality promotional videos that effectively showcase your brand.</p><a class="button button-190 button-circle btn-rounded-outline" href="#">Read More</a>
               </div>
-            </div>
+            </div> -->
 
             <div class="col-xl-4 col-md-6 col-12 wow fadeInDown" data-wow-delay=".3s">
               <div class="pricing-box bg-gray-dark">
-                <div class="pricing-box-tittle">Troubleshooting</div>
-                <p>For international enterprises</p>
+                <div class="pricing-box-tittle">Diagnosing</div>
+
                 <hr/>
                 <!-- <div class="pricing-box-inner"><span class="pricing-box-symbol">$</span><span class="pricing-box-price">89</span></div>
                 <div class="pricing-box-label bg-gray">MONTHLY</div> -->
-                <p>Conversion Rate Optimization (CRO) is the practice of optimizing visitor actions with the primary goal of achieving higher conversions on websites and apps.</p><a class="button button-190 button-circle btn-primary-rounded" href="#">Read More</a>
+                <p>Conversion Rate Optimization (CRO) is the practice of optimizing visitor actions with the primary goal of achieving higher conversions on websites and apps.</p><a class="button button-190 button-circle btn-primary-rounded" href="implementation.html">Read More</a>
               </div>
             </div>
 
             <div class="col-xl-4 col-md-6 col-12 wow fadeInDown" data-wow-delay=".3s">
               <div class="pricing-box bg-gray-dark">
                 <div class="pricing-box-tittle">Translation Services</div>
-                <p>For international enterprises</p>
+
                 <hr/>
                 <!-- <div class="pricing-box-inner"><span class="pricing-box-symbol">$</span><span class="pricing-box-price">89</span></div>
                 <div class="pricing-box-label bg-gray">MONTHLY</div> -->
-                <p>we offer top-quality translation services to help our clients expand their reach and connect with audiences around the world.</p><a class="button button-190 button-circle btn-primary-rounded" href="#">Read More</a>
+                <p> With a wealth of experience in various industries, our team of highly skilled translators work diligently to ensure accurate and culturally-sensitive translations for businesses of all sizes.</p><a class="button button-190 button-circle btn-primary-rounded" href="translation.html">Read More</a>
               </div>
             </div>
           </div>
@@ -230,7 +412,7 @@
       <section class="section custom-section position-relative section-md">
         <div class="container">
           <div class="row">
-            <div class="col-xl-7 col-lg-7 col-12">
+            <div class="col-xl-12 col-lg-12 col-12">
               <div class="section-name wow fadeInRight">Get More Done with Our Comprehensive Features</div>
               <h3 class="text-capitalize devider-left wow fadeInLeft" data-wow-delay=".2s">Why Businesses<span class="text-primary"> Choose us</span></h3>
               <p>Data-Driven Marketing for Measurable Results</p>
@@ -275,8 +457,7 @@
             </div>
           </div>
         </div>
-        <div class="image-left-side wow slideInRight" data-wow-delay=".5s"><img src="images/pexels-fauxels-3184287.jpg" alt="" width="636" height="240"/>
-        </div>
+        
         <div class="decor-text decor-text-2 wow fadeInUp" data-wow-delay=".3s">features</div>
       </section>
      
@@ -287,7 +468,7 @@
           <div class="row justify-content-center">
             <div class="col-xl-10">
               <div class="section-name wow fadeInRight text-center" data-wow-delay=".2s">testimonials</div>
-              <h3 class="wow fadeInLeft text-capitalize text-center" data-wow-delay=".3s">What People Say<span class="text-primary"> About Us</span></h3>
+              <h3 class="wow fadeInLeft text-capitalize text-center" data-wow-delay=".3s">What <span class="text-primary">People Say </span>About Us</h3>
               <div class="owl-carousel review-carousel" data-items="1" data-sm-items="1" data-md-items="1" data-lg-items="1" data-xl-items="1" data-xxl-items="1" data-dots="true" data-nav="false" data-stage-padding="0" data-loop="false" data-margin="0" data-mouse-drag="true" data-autoplay="false">
                 <div class="item">
                   <div class="item-preview wow fadeInDown" data-wow-delay=".2s"><img src="images/user-1-216x216.jpg" alt="" width="216" height="108"/>
@@ -333,18 +514,22 @@
             <div class="col-lg-3 wow fadeInLeft">
                  <!--Brand--><a class="brand" href="index.html"><img class="brand-logo-dark" style="height:5rem;" src="images/sgs-high-resolution-logo-color-on-transparent-background.png" alt="" width="100" height="17"/><img class="brand-logo-light" src="images/sgs-high-resolution-logo-color-on-transparent-background.png" alt="" width="100" height="17"/></a>
                
-              <p class="footer-classic-description offset-top-0 offset-right-25">Shreeji Global Services is an agency dedicated to finding creative solutions for our clients through brand strategy, creative communication, and technology.</p>
+              
             </div>
+            <div class="col-lg-3 wow fadeInLeft">
+              
+           <p class="footer-classic-description offset-top-0 offset-right-25">Shreeji Global Services is an agency dedicated to finding creative solutions for our clients through brand strategy, creative communication, and technology.</p>
+         </div>
             <div class="col-lg-3 col-sm-8 wow fadeInUp">
               <P class="footer-classic-title">contact info</P>
-              <div class="d-block offset-top-0">No.11, FF2, 1st Floor, New Bel Road, RMV 2nd Stage,<span class="d-lg-block">Bangalore – 560092</span></div><a class="d-inline-block accent-link" href="mailto:info@shreejigs.com">info@shreejigs.com</a><a class="d-inline-block" href="tel:+91 080 23415194">+91 080 23415194</a>
+              <div class="d-block offset-top-0"># 2,  3rd Floor. RMV 2nd Stage,<span class="d-lg-block">Bangalore – 560092</span></div><a class="d-inline-block accent-link" href="mailto:info@shreejigs.com">info@shreejigs.com</a><a class="d-inline-block" href="tel:+91 080 23415194">+91 080 23415194</a>
               <!-- <ul>
                 <li>Mon-Thu:<span class="d-inline-block offset-left-10 text-white">9:30 AM - 9:00 PM</span></li>
                 <li>Fri:<span class="d-inline-block offset-left-10 text-white">10:00 AM - 9:00 PM</span></li>
                 <li>Sat:<span class="d-inline-block offset-left-10 text-white">10:00 AM - 3:00 PM</span></li>
               </ul> -->
             </div>
-            <div class="col-lg-2 col-sm-4 wow fadeInUp" data-wow-delay=".3s">
+            <!-- <div class="col-lg-2 col-sm-4 wow fadeInUp" data-wow-delay=".3s">
               <P class="footer-classic-title">Quick Links</P>
               <ul class="footer-classic-nav-list">
                 <li><a href="index.html">Home</a></li>
@@ -353,31 +538,33 @@
                 <li><a href="#">Blog</a></li>
                 <li><a href="contacts.html">Contacts</a></li>
               </ul>
-            </div>
-            <div class="col-lg-4 wow fadeInLeft" data-wow-delay=".2s">
-              <P class="footer-classic-title">Book an Appointment</P>
-              <form class="rd-mailform text-left footer-classic-subscribe-form" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+            </div> -->
+            <div class="col-lg-2 col-sm-4 wow fadeInUp" data-wow-delay=".2s">
+              <P class="footer-classic-title">Get In Touch</P>
+              <form class="rd-mailform text-left footer-classic-subscribe-form" data-form-output="form-output-global" data-form-type="contact" method="post">
                 <!-- <div class="form-wrap">
                   <label class="form-label" for="subscribe-email">Your Email Address</label>
                   <input class="form-input" id="subscribe-email" type="email" name="email" data-constraints="@Email @Required">
                 </div> -->
                 <div class="form-button group-sm text-center text-lg-left">
-                  <button class="button button-primary button-circle" type="submit">Click here</button>
+                <a href="contacts.html"> <button class="button button-primary button-circle" >Contact Us</button>
                 </div>
               </form>
-              <p>Get in touch with our experts.</p>
+              
             </div>
+            
           </div>
         </div>
+        <br>
 
         <div class="container wow fadeInUp" data-wow-delay=".4s">
           <div class="footer-classic-aside">
-            <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span>. All Rights Reserved by ShreeJi Global Services. Design by <a href="https://www.templatemonster.com">TemplateMonster</a></p>
+            <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span>. All Rights Reserved by ShreeJi Global Services</a></p>
             <ul class="social-links">
-              <li><a class="fa fa-linkedin" href="#"></a></li>
+              <!-- <li><a class="fa fa-linkedin" href="#"></a></li>
               <li><a class="fa fa fa-twitter" href="#"></a></li>
               <li><a class="fa fa-facebook" href="#"></a></li>
-              <li><a class="fa fa-instagram" href="#"></a></li>
+              <li><a class="fa fa-instagram" href="#"></a></li> -->
             </ul>
           </div>
         </div>
