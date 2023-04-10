@@ -10,7 +10,137 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
-    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+    
+    <style>
+       .parent {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+        
+      }
+      .parent img {
+        vertical-align: middle;
+        opacity: 0.7;
+        height: 500px;
+        width: 400px;
+        object-fit: contain;
+      }
+      .parent img:hover{
+        opacity: 1;
+        transition: 0.3s;
+        cursor: pointer;
+      }
+      .parent .text {
+        position: absolute;
+        border-radius:0 5% 5% 0;
+        bottom: 0;
+        background-color: #9986ab;
+        color: #ffffff;
+        width: 40%;
+        height: 30%;
+        padding: 20px;
+        font-weight: bolder;
+        font-size: larger;
+      }
+      .collapsible {
+  background-color: #9966cb;
+  background: linear-gradient(-90deg, rgba(35, 79, 109, 0.3785889356) 0%, #9966cb 100%);
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+.card {
+  border: none;
+  transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+  overflow: hidden;
+  border-radius: 20px;
+  min-height: 450px;
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 768px) {
+  .card {
+    min-height: 350px;
+  }
+}
+@media (max-width: 420px) {
+  .card {
+    min-height: 300px;
+  }
+}
+.card.card-has-bg {
+  transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+  background-size: 120%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.card.card-has-bg:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  -webkit-filter: grayscale(1);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+.card.card-has-bg:hover {
+  transform: scale(0.98);
+  box-shadow: 0 0 5px -2px rgba(0, 0, 0, 0.3);
+  background-size: 130%;
+  transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+.card.card-has-bg:hover .card-img-overlay {
+  transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+  background: #234f6d;
+  background: linear-gradient(0deg, rgba(4, 69, 114, 0.5) 0%, #044572 100%);
+}
+.card .card-footer {
+  background: none;
+  border-top: none;
+}
+.card .card-footer .media img {
+  border: solid 3px rgba(255, 255, 255, 0.3);
+}
+.card .card-meta {
+  color: #26BD75;
+}
+.card .card-body {
+  transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+.card:hover {
+  cursor: pointer;
+  transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+.card:hover .card-body {
+  margin-top: 30px;
+  transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+.card .card-img-overlay {
+  transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+  /* background: #9966cb; */
+  background: linear-gradient(0deg, rgba(35, 79, 109, 0.3785889356) 0%, #9966cb 100%);
+}
+    .ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
   </head>
   <body>
     <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
@@ -28,31 +158,7 @@
         <div class="rd-navbar-wrap">
           <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
             <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
-            <div class="rd-navbar-aside-outer rd-navbar-collapse bg-gray-dark">
-              <div class="rd-navbar-aside">
-                <ul class="list-inline navbar-contact-list" style="color: white;padding: 15px;">
-                  <li>
-                    <div class="unit unit-spacing-xs align-items-center">
-                      <div class="unit-left"><span class="icon text-middle fa-phone"></span></div>
-                      <div class="unit-body" ><a href="tel:+9108023415194" style="color: white;">+91 080 - 23415194</a></div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="unit unit-spacing-xs align-items-center">
-                      <div class="unit-left"><span class="icon text-middle fa-envelope"></span></div>
-                      <div class="unit-body"><a href="mailto:info@shreejigs.com" style="color: white;">info@shreejigs.com</a></div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="unit unit-spacing-xs align-items-center">
-                      <div class="unit-left"><span class="icon text-middle fa-map-marker"></span></div>
-                      <div class="unit-body"><a href="#" style="color: white;"># 2,  3rd Floor. RMV 2nd Stage, Bangalore – 560092</a></div>
-                    </div>
-                  </li>
-                </ul>
-              
-              </div>
-            </div>
+             
             <div class="rd-navbar-main-outer">
               <div class="rd-navbar-main">
                 <!--RD Navbar Panel-->
@@ -77,7 +183,7 @@
                         <div class="dropdown-content">
                           <a href="Digitalm.html">DIGITAL MARKETING</a>
                           <a href="translation.html">TRANSLATION SERVICES</a>
-                          <a href="implementation.html">DAIGNOSING/TROUBLESHOOTING</a>
+                          <a href="execution_and_problem_solving.html  ">DAIGNOSING/TROUBLESHOOTING</a>
                           <!-- <a href="cc.html">Creative Cloud</a> -->
                         </div>
                       </div>
@@ -94,7 +200,7 @@
         </div>
       </header>
       <section class="section section-intro context-dark">
-        <div class="intro-bg" style="background: rgb(153,102,203);background: linear-gradient(100deg, rgba(153,102,203,1) 13%, rgba(2,0,36,1) 100%, rgba(0,212,255,1) 100%);background-size:cover;"></div>
+        <div class="intro-bg" style="background-image:url("images/pexels-fauxels-3183197.jpg");background-size:cover;"></div>
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-xl-8 text-center">
@@ -104,8 +210,194 @@
           </div>
         </div>
       </section>
-      <!-- About page about section-->
-      <section class="section section-md">
+      <!-- About page about section -->
+      <!-- <section class="section section-md">
+        <div class="container">
+          <div class="row row-40 justify-content-center">
+            <div class="col-lg-6 col-12">
+              <div class="offset-top-45 offset-lg-right-45">
+                <div class="section-name wow fadeInRight" data-wow-delay=".2s">About us</div>
+                <h3 class="wow fadeInLeft text-capitalize" data-wow-delay=".3s">A Few Words<span class="text-primary"> about us</span></h3>
+                <p class="font-weight-bold text-gray-dark wow fadeInUp" data-wow-delay=".4s">ShreeJi Global Services is one of those unique digital marketing providers in Bangalore which blends creativity with feasibility. We offer a plethora of services like SEO, SEM, SMM, Complete Digital Marketing, Website Design and Development, Domain Registration, Web Hosting, E - Commerce Solutions, Content Management System and other IT related projects. We do not believe in getting lost in the crowd. So, we differentiate ourselves by delivering what we promise. Although we offer digital marketing solutions at unbelievably attractive packages, quality is something we never compromise on. So, if you are willing to occupy the digital space before others, our doors are wide open!
+                  
+                  </p>
+                <p class="wow fadeInUp" data-wow-delay=".4s">.</p>
+                <div class="offset-top-20"> -->
+                  <!--Linear progress bar-->
+                  <!-- <article class="progress-linear">
+                    <div class="progress-header progress-header-simple">
+                      <p>Management</p><span class="progress-value">85</span>
+                    </div>
+                    <div class="progress-bar-linear-wrap">
+                      <div class="progress-bar-linear"></div>
+                    </div>
+                  </article> -->
+                  <!--Linear progress bar-->
+                  <!-- <article class="progress-linear">
+                    <div class="progress-header progress-header-simple">
+                      <p>Marketing</p><span class="progress-value">45</span>
+                    </div>
+                    <div class="progress-bar-linear-wrap">
+                      <div class="progress-bar-linear"></div>
+                    </div>
+                  </article> -->
+                  <!--Linear progress bar-->
+                  <!-- <article class="progress-linear">
+                    <div class="progress-header progress-header-simple">
+                      <p>Analysis</p><span class="progress-value">90</span>
+                    </div>
+                    <div class="progress-bar-linear-wrap">
+                      <div class="progress-bar-linear"></div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-sm-10 col-12">
+              <div class="block-decorate-img wow fadeInLeft" data-wow-delay=".2s"><img src="images/pexels-karolina-grabowska-7681097.jpg" alt="" width="570" height="351"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+      <h3 style="text-align: center;margin-top:70px;">Maximizing Your Social Media Impact  <span class="text-primary">  </span></h3>
+<section style="margin-top:70px;margin-bottom: 50px;">
+
+  
+      <div class="d-flex justify-content-center">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="parent">
+                <img src="images/pexels-fauxels-3184603.jpg" width="400" height="400" alt="Notebook" style="width:100%;">
+                <div class="text">
+                 
+                  <p>
+                    ALL-IN-ONE WEB SOLUTION FOR YOUR BUSINESS  
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="parent">
+                <img src="images/pexels-fauxels-3183197.jpg" alt="Notebook" style="width:100%;object-fit: cover;">
+                <div class="text">
+                  
+                  <p>
+                    THE BEST DIGITAL AGENCY YOU’LL EVER NEED 
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+       
+      
+    </div>
+  </section>
+
+      
+
+      <!-- <section class="wrapper" style="align-items:center">
+        <div class="container" >
+          <div class="row">
+            <div class="col text-center mb-5">
+                
+                <p class="lead"> </p>
+            </div>
+          </div>
+        <div class="row" >
+            <h3 style="text-align: center;">Maximizing Your Social Media Impact with a <span class="text-primary"> Three-Step Strategy </span></h3>
+            <br>
+            <br>
+            <br>
+       <div class="col-sm-12 col-md-6 col-lg-4 mb-4"><div class="card text-white card-has-bg click-col" style="background-image:url('images/pexels-fauxels-3183197.jpg');background-size: cover;">
+               <img class="card-img d-none" src="" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+              <div class="card-img-overlay d-flex flex-column">
+               <div class="card-body">
+
+                  <h4 class="card-title mt-0 "><a class="text-white" herf="#">Native Translators</a></h4>
+
+                 <p>Our translators are expert linguists with an ample amount of experience and specialization in the chosen field. Depending on the translation task, we select translators based either in India for Indian and International language or In-country native professional translators throughout the world for translation and localization in the regional language of the locality.</p>
+                </div>
+                <div class="card-footer">
+                
+                </div>
+              </div>
+            </div></div>
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4"><div class="card text-white card-has-bg click-col" style="background-image:url('');">
+                <img class="card-img d-none" src="" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+               <div class="card-img-overlay d-flex flex-column">
+                <div class="card-body">
+             
+                   <h4 class="card-title mt-0 "><a class="text-white" herf="#">Quality</a></h4>
+                    <p>
+                        we believe that translation should go beyond mere words. We translate not only your words but also your message, tone, meaning, and design. This assures that you get a fully localized version in the target language and for your target market.
+                    </p>
+                 </div>
+                 <div class="card-footer">
+                 
+                 </div>
+               </div>
+             </div></div>
+     
+      </div>
+        
+      </div>
+      </section> -->
+       <!--Counters-->
+       <section class="section bg-image-2">
+        <div class="container section-md">
+          <div class="row row-30 text-center">
+            <div class="col-xl-3 col-sm-6 col-12">
+              <div class="counter-classic">
+                <div class="counter-classic-number"><span class="icon-lg novi-icon offset-right-10 mercury-icon-time"></span><span class="counter text-white" data-speed="2000">2015</span>
+                </div>
+                <div class="counter-classic-title">Year of Establishment</div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12">
+              <div class="counter-classic">
+                <div class="counter-classic-number"><span class="icon-lg novi-icon offset-right-10 mercury-icon-folder"></span><span class="counter text-white" data-speed="2000">100</span><span class="symbol text-white">+</span>
+                </div>
+                <div class="counter-classic-title">Trusted Customers</div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12">
+              <div class="counter-classic">
+                <div class="counter-classic-number"><span class="icon-lg novi-icon offset-right-10 mercury-icon-users"></span><span class="counter text-white" data-speed="2000">70</span><span class="symbol text-white">%</span>
+                </div>
+                <div class="counter-classic-title">Agency increased revenue</div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12">
+              <div class="counter-classic">
+                <div class="counter-classic-number"><span class="icon-lg novi-icon offset-right-10 mercury-icon-group"></span><span class="counter text-white" data-speed="2000">50</span><span class="symbol text-white">+</span>
+                </div>
+                <div class="counter-classic-title">Team Members</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+<br>
+<br>
+        <!--Cta section-->
+        <!-- <section class="section section-md" style='background-image:url("images/pexels-fauxels-3183197.jpg"); background-size: cover;opacity: 0.7;'>
+          <div class="container">
+            <div class="row justify-content-center"> -->
+              <!-- <div class="col-md-10 col-12 text-center"><span class="text-white d-block cta-big-text font-weight-medium">Still Have Some Questions Left?</span> -->
+                <!-- <h2 class="text-white"><span class="d-block" style="color:#9966cb;">
+                  THERE ARE TWO SIMPLE IDEOLOGIES IN LIFE - FOLLOW THE PATH OR CREATE YOU OWN PATH. AT DIGIMARK AGENCY, WE ARE DEDICATED WORSHIPERS OF THE LATTER.<a class="underline-link" href="tel:#"> 
+                </a></span></h2> -->
+                <!-- <p class="text-white">Feel free to contact our team to learn more about the services provided by us and multiple offers for Your business!</p><a class="button-circle button-default-outline button button-lg button-width-210" href="contacts.html">contact us</a> -->
+              <!-- </div>
+            </div>
+          </div>
+        </section> -->
+
+       <!-- About page about section-->
+       <section class="section section-md" style="margin-top: -100px;">
         <div class="container">
           <div class="row row-40 justify-content-center">
             <div class="col-lg-6 col-12">
@@ -147,57 +439,6 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-6 col-sm-10 col-12">
-              <div class="block-decorate-img wow fadeInLeft" data-wow-delay=".2s"><img src="images/pexels-karolina-grabowska-7681097.jpg" alt="" width="570" height="351"/>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-       <!--Counters-->
-       <section class="section bg-image-2">
-        <div class="container section-md">
-          <div class="row row-30 text-center">
-            <div class="col-xl-3 col-sm-6 col-12">
-              <div class="counter-classic">
-                <div class="counter-classic-number"><span class="icon-lg novi-icon offset-right-10 mercury-icon-time"></span><span class="counter text-white" data-speed="2000">2015</span>
-                </div>
-                <div class="counter-classic-title">Year of Establishment</div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 col-12">
-              <div class="counter-classic">
-                <div class="counter-classic-number"><span class="icon-lg novi-icon offset-right-10 mercury-icon-folder"></span><span class="counter text-white" data-speed="2000">100</span><span class="symbol text-white">+</span>
-                </div>
-                <div class="counter-classic-title">Trusted Customers</div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 col-12">
-              <div class="counter-classic">
-                <div class="counter-classic-number"><span class="icon-lg novi-icon offset-right-10 mercury-icon-users"></span><span class="counter text-white" data-speed="2000">70</span><span class="symbol text-white">%</span>
-                </div>
-                <div class="counter-classic-title">Agency increased revenue</div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 col-12">
-              <div class="counter-classic">
-                <div class="counter-classic-number"><span class="icon-lg novi-icon offset-right-10 mercury-icon-group"></span><span class="counter text-white" data-speed="2000">50</span><span class="symbol text-white">+</span>
-                </div>
-                <div class="counter-classic-title">Team Members</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-       <!-- About page about section-->
-       <section class="section section-md">
-        <div class="container">
-          <div class="row row-40 justify-content-center">
-            <div class="col-lg-6 col-sm-10 col-12">
-              <div class="block-decorate-img wow fadeInLeft" data-wow-delay=".2s"><img src="images/pexels-karolina-grabowska-7681097.jpg" alt="" width="570" height="351"/>
-              </div>
-            </div>
             <div class="col-lg-6 col-12">
               <div class="offset-top-45 offset-lg-right-45">
                 <div class="section-name wow fadeInRight" data-wow-delay=".2s">Unique Selling Points</div>
@@ -234,27 +475,16 @@
                 <br>
                 <button onclick="myFunc()" class="button button-190 button-circle btn-primary">Interaction Made Easy</button>
                 <button onclick="myFunct()" class="button button-190 button-circle btn-primary">Transparency To The Core</button>
-                <p style="font-size: large;" id="demo"></p>
+                <p style="font-size:large;" id="demo"></p>
               </div>
             </div>
+            
             
           </div>
         </div>
       </section>
     
-      <!--Cta section-->
-      <section class="section section-md" style="background-color: #9966CB; background-size: cover;">
-        <div class="container">
-          <div class="row justify-content-center">
-            <!-- <div class="col-md-10 col-12 text-center"><span class="text-white d-block cta-big-text font-weight-medium">Still Have Some Questions Left?</span> -->
-              <h2 class="text-white"><span class="d-block">
-                THERE ARE TWO SIMPLE IDEOLOGIES IN LIFE - FOLLOW THE PATH OR CREATE YOU OWN PATH. AT DIGIMARK AGENCY, WE ARE DEDICATED WORSHIPERS OF THE LATTER.<a class="underline-link" href="tel:#"> 
-              </a></span></h2>
-              <!-- <p class="text-white">Feel free to contact our team to learn more about the services provided by us and multiple offers for Your business!</p><a class="button-circle button-default-outline button button-lg button-width-210" href="contacts.html">contact us</a> -->
-            </div>
-          </div>
-        </div>
-      </section>
+    
       <!-- Footer<a class="section section-banner" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" target="_blank" style="background-image: url(images/background-01-1920x310.jpg); background-image: -webkit-image-set( url(images/background-01-1920x310.jpg) 1x, url(images/background-01-3840x620.jpg) 2x )"><img src="images/foreground-01-1600x310.png" srcset="images/foreground-01-1600x310.png 1x, images/foreground-01-3200x620.png 2x" alt="" width="1600" height="310"></a>-->
  <!-- Footer<a class="section section-banner" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" target="_blank" style="background-image: url(images/background-01-1920x310.jpg); background-image: -webkit-image-set( url(images/background-01-1920x310.jpg) 1x, url(images/background-01-3840x620.jpg) 2x )"><img src="images/foreground-01-1600x310.png" srcset="images/foreground-01-1600x310.png 1x, images/foreground-01-3200x620.png 2x" alt="" width="1600" height="310"></a> -->
  <footer class="section footer-classic section-sm">
