@@ -11,7 +11,107 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}
-    .card-big-shadow {
+ .ol-cards,
+.ol-cards * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ol-cards {
+  --flapWidth: 2rem;
+  --flapHeigth: 1rem;
+  --iconSize: 3rem;
+  --numberSize: 3rem;
+  --colGapSize: 2rem;
+  width: min(100%, 40rem);
+  margin-inline: auto;
+  display: grid;
+  gap: 2rem;
+  padding-inline-start: var(--flapWidth);
+  font-family: sans-serif;
+  color: #222;
+  
+  list-style: none;
+}
+.ol-cards > li {
+  display: grid;
+  grid-template-areas:
+    "icon title nr"
+    "icon descr nr";
+  gap: 0 var(--colGapSize);
+  align-items: center;
+  padding: var(--colGapSize) var(--flapWidth) var(--colGapSize) 0;
+  border-radius: 1rem 5rem 5rem 1rem;
+  background-image: linear-gradient(to bottom right, #e9eaec, #ffffff);
+  list-style-type: none;
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.25));
+  box-shadow: inset 2px 2px 2px white, inset -1px -1px 1px rgba(0, 0, 0, 0.25);
+}
+
+.ol-cards > li > .icon {
+  grid-area: icon;
+  background: var(--accent-color);
+  color: white;
+  font-size: var(--iconSize);
+  width: calc(2 * var(--flapWidth) + var(--iconSize));
+  padding-block: 1rem;
+  border-radius: 0 5rem 5rem 0;
+  margin-inline-start: calc(-1 * var(--flapWidth));
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.ol-cards > li > .icon::before {
+  content: "";
+  position: absolute;
+  width: var(--flapWidth);
+
+  height: calc(100% + calc(var(--flapHeigth) * 2));
+  left: 0;
+  top: calc(var(--flapHeigth) * -1);
+  clip-path: polygon(
+    0 var(--flapHeigth),
+    100% 0,
+    100% 100%,
+    0 calc(100% - var(--flapHeigth))
+  );
+  background-color: var(--accent-color);
+  background-image: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.2)
+  );
+  z-index: -1;
+}
+
+.ol-cards > li > .title {
+  grid-area: title;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+.ol-cards > li > .descr {
+  grid-area: descr;
+}
+.ol-cards > li::after {
+  grid-area: nr;
+ 
+  color: var(--accent-color);
+  font-size: var(--numberSize);
+  font-weight: 700;
+}
+@media (max-width: 40rem) {
+  .ol-cards {
+    --flapWidth: 1rem;
+    --flapHeigth: 0.5rem;
+    --iconSize: 2rem;
+    --numberSize: 2rem;
+    --colGapSize: 1rem;
+  }
+}
+ 
+ .card-big-shadow {
     max-width: 320px;
     position: relative;
 }
@@ -76,73 +176,78 @@ h6, .h6 {
     font-weight: 600;
     text-transform: uppercase;
 }
-.card .description {
-    font-size: 16px;
-    color: #66615b;
-}
-.content-card{
-    margin-top:30px;    
-}
-a:hover, a:focus {
-    text-decoration: none;
-}
 
-/*======== COLORS ===========*/
-.card[data-color="blue"] {
-    background: #b8d8d8;
+ul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 2rem;
+  list-style: none;
 }
-.card[data-color="blue"] .description {
-    color: #506568;
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 15rem;
+  --iconS: 6rem;
+  --iconOffsetX: calc(var(--iconS) / 4);
+  --iconOffsetY: calc(var(--iconS) / 2.5);
+  margin-top: var(--iconOffsetY);
+  margin-inline: var(--iconOffsetX);
+  border-radius: 1rem;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  background-color: #fff;
+  --shadowSurface: 0.5rem 0.5rem 0.5rem rgb(0 0 0 / .25);
+  --bgGradient: radial-gradient(circle at bottom right, transparent, rgb(0 0 0 / .1));
+  background-image:
+    radial-gradient( circle at 
+        calc(var(--iconOffsetX) * -1 + var(--iconS) / 2) 
+        calc(var(--iconOffsetY) * -1 + var(--iconS) / 2), 
+      rgb(0 0 0 / .4) calc(var(--iconS) / 2), 
+      transparent calc(var(--iconS) / 1.6)
+    ),
+    radial-gradient( circle at 
+        calc(var(--iconOffsetX) * -1 + var(--iconS) / 2)
+        calc(var(--iconOffsetY) * -1 + var(--iconS) / 2),
+      var(--accent-color) calc(var(--iconS) / 1.4),
+      transparent calc(var(--iconS) / 1.4 + 1px)
+    ),
+    var(--bgGradient);
+  --shadowInsetLight: inset 0.125rem 0.125rem 0.125rem rgb(255 255 255 / .5);
+  --shadowInsetDark: inset -0.067rem -0.067rem 0.067rem rgb(0 0 0 / .5);
+  box-shadow: 
+    var(--shadowInsetLight),
+    var(--shadowInsetDark),
+    var(--shadowSurface)   
 }
-
-.card[data-color="green"] {
-    background: #d5e5a3;
+.card .icon {
+  width: var(--iconS);
+  aspect-ratio: 1;
+  margin-top: calc(var(--iconOffsetY) * -1);
+  margin-left: calc(var(--iconOffsetX) * -1);
+  margin-bottom: calc(var(--iconS) / 4);
+  display: grid;
+  place-items: center;
+  color: var(--accent-color);
+  font-size: calc(var(--iconS) / 3);
+  background-color: inherit;
+  border-radius: 50%;
+  box-shadow:
+    var(--shadowInsetLight),
+    var(--shadowInsetDark);
+  background-image: var(--bgGradient);
 }
-.card[data-color="green"] .description {
-    color: #60773d;
+.card .title{
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  text-align: center;
+  text-transform: uppercase
 }
-.card[data-color="green"] .category {
-    color: #92ac56;
-}
-
-.card[data-color="yellow"] {
-    background: #ffe28c;
-}
-.card[data-color="yellow"] .description {
-    color: #b25825;
-}
-.card[data-color="yellow"] .category {
-    color: #d88715;
-}
-
-.card[data-color="brown"] {
-    background: #d6c1ab;
-}
-.card[data-color="brown"] .description {
-    color: #75442e;
-}
-.card[data-color="brown"] .category {
-    color: #a47e65;
-}
-
-.card[data-color="purple"] {
-    background: #baa9ba;
-}
-.card[data-color="purple"] .description {
-    color: #3a283d;
-}
-.card[data-color="purple"] .category {
-    color: #5a283d;
-}
-
-.card[data-color="orange"] {
-    background: #ff8f5e;
-}
-.card[data-color="orange"] .description {
-    color: #772510;
-}
-.card[data-color="orange"] .category {
-    color: #e95e37;
+.card .content{
+  padding: 1rem;
+  padding-bottom: 2rem;
+  font-size: 0.9em
 }
     </style>
   </head>
@@ -204,137 +309,153 @@ a:hover, a:focus {
             </nav>
           </div>
         </header>
-      <section class="section section-intro context-dark">
-        <div class="intro-bg" style="background-size:cover;background-position: top center;"></div>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-xl-8 text-center">
-              <h1 class="font-weight-bold wow fadeInLeft">Digital Marketing</h1>
-              <h4 class="intro-description wow fadeInRight">Connect, Engage, and Grow with Data-Driven Digital Marketing</h4>
+        <section class="section main-section parallax-scene-js" style="background-color: #BA90C6; background-size:cover;max-height: 640px;">
+          <div style="width: 100%;height: 100%;">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-xl-8 col-12">
+                  <div class="main-decorated-box text-center text-xl-left">
+                    <h1 class="text-white text-xl-center wow slideInRight" data-wow-delay=".3s"><span class="align-top offset-top-30 d-inline-block font-weight-light prefix-text"></span><span class="big font-weight-bold d-inline-flex offset-right-170">Digital </span><span class="biggest d-block d-xl-flex font-weight-bold">Marketing</span></h1>
+                    <div class="decorated-subtitle text-italic text-white wow slideInLeft">Connect, Engage, and Grow with Data-Driven Digital Marketing</div>
+                  </div>
+                </div>
+                <!--   -->
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
+            <div class="decorate-layer">
+              <div class="layer-1">
+                <div class="layer" data-depth=".20"><img src="images/parallax-item-1-563x532.png" alt="" width="563" height="266"/>
+                </div>
+              </div>
+              <div class="layer-2">
+                <div class="layer" data-depth=".30"><img src="images/parallax-item-2-276x343.png" alt="" width="276" height="171"/>
+                </div>
+              </div>
+              <div class="layer-3">
+                <div class="layer" data-depth=".40"><img src="images/parallax-item-3-153x144.png" alt="" width="153" height="72"/>
+                </div>
+              </div>
+              <div class="layer-4">
+                <div class="layer" data-depth=".20"><img src="images/parallax-item-4-69x74.png" alt="" width="69" height="37"/>
+                </div>
+              </div>
+              <div class="layer-5">
+                <div class="layer" data-depth=".40"><img src="images/parallax-item-5-72x75.png" alt="" width="72" height="37"/>
+                </div>
+              </div>
+              <div class="layer-6">
+                <div class="layer" data-depth=".30"><img src="images/parallax-item-6-45x54.png" alt="" width="45" height="27"/>
+                </div>
+              </div>
+            </div>
+            
+          </section>
 
       <br>
       <br>
 
       <section id="gallery" >
         <div class="container">
-          <h5 style="text-align: center;font-size: 25px;">There are many different methods of digital marketing, each with its own unique benefits and strategies. Here are some of the most common <span class="text-primary">methods of digital marketing: </span></h5>
+          <h5 style="text-align: center;font-size: 25px;">There are many different methods of digital marketing, each with its own unique benefits and strategies. Here are some of the most common <span style="color: #E8A0BF;">methods of digital marketing: </span></h5>
         
-          <!-- <div class="row">
-          <div class="col-lg-4 mb-4">
-          <div class="card">
-            <img src="images/pexels-pixabay-262470.jpg" alt="" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Goals</h5>
-              <p class="card-text">In today's digital age, social media plays a vital role in any successful marketing strategy. Defining clear goals and tailoring your content planning accordingly is crucial for higher audience engagement and growth. We analyze your business needs and provide a customized action plan to help you achieve your social media marketing goals. Our team of experts ensures a seamless implementation of byte-sized actions g to boost your online presence and drive business growth.</p>
-            
-            </div>
-           </div>
-          </div>
-        <div class="col-lg-4 mb-4">
-        <div class="card">
-            <img src="images/pexels-eva-bronzini-7661590.jpg" alt="" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Brand Image</h5>
-              <p class="card-text">Social media marketing requires consistent engagement with your audience, building a loyal following, and influencing followers to take action. By developing a unique style that reflects your brand's values, services, and products, you can effectively communicate key messages to your audience, establish trust, and improve the overall clarity and understanding of your brand. This approach can help strengthen your brand's reputation and increase its reliability.</p>
-             
-            </div>
-            </div>
-          </div>
-          <div class="col-lg-4 mb-4">
-          <div class="card">
-            <img src="images/pexels-polina-zimmerman-3782134.jpg" alt="" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Targeting</h5>
-              <p class="card-text">By identifying the pulse of your customer, you can gain valuable insights into their online habits, interests, and behaviors, which can help you fine-tune your social media marketing strategy. This, in turn, can help you effectively communicate your brand's message, connect with your audience, and drive engagement and conversions. By continuously monitoring and analyzing your customers' response to your social media efforts, you can optimize your approach and achieve better results.
 
-
-
-              </p>
-             
-            </div>
-           </div>
-          </div>
-        </div> -->
         
       </div>
       </section>
+
+      <div class="row">
+        <div class="col-sm">
+          <ol class="ol-cards">
+          <li style="--accent-color: #C0DBEA">
+              <div class="icon"><i class="fa-brands fa-search-plus"></i></div>
+              <div class="title">Search engine optimization (SEO):</div>
+              <div class="descr">SEO is the process of optimizing your website to rank higher in search engine results pages (SERPs). This involves optimizing your website's content, structure, and code to make it more visible and relevant to search engines.</div>
+          </li>
+          <li style="--accent-color: #BA90C6">
+              <div class="icon"><i class="fa-brands fa-money"></i></div>
+              <div class="title">Pay-per-click advertising (PPC): </div>
+              <div class="descr">PPC advertising is a form of digital advertising where you pay for each click on your ad. This includes search engine advertising (Google Ads), social media advertising (Facebook Ads), and display advertising (banner ads).</div>
+          </li>
+          <li style="--accent-color: #E8A0BF">
+            <div class="icon"><i class="fa-brands fa-envelope-open"></i></div>
+            <div class="title">Email marketing:</div>
+            <div class="descr">Email marketing involves sending targeted and personalized emails to your subscribers to promote your products or services, build relationships, and drive conversions.</div>
+        </li>
+          
+      </ol></div>
+        <div class="col-sm">
+          <ol class="ol-cards">
+            <li style="--accent-color: #E8A0BF">
+                <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+                <div class="title">Social media marketing:</div>
+                <div class="descr">Social media marketing involves using social media platforms like Facebook, Instagram, and Twitter to connect with your target audience, build relationships, and promote your brand.</div>
+            </li>
+            <li style="--accent-color: #C0DBEA">
+                <div class="icon"><i class="fa-brands fa-user"></i></div>
+                <div class="title">Influencer marketing:</div>
+                <div class="descr">Influencer marketing involves partnering with social media influencers to promote your products or services to their followers.</div>
+            </li>
+            <li style="--accent-color: #BA90C6">
+                <div class="icon"><i class="fa-brands fa-address-book-o"></i></div>
+                <div class="title">Affiliate marketing:</div>
+                <div class="descr">Affiliate marketing involves partnering with other businesses or individuals to promote your products or services and paying them a commission for each sale or lead they generate.</div>
+            </li>
+            
+            
+        </ol>
+        </div>
+      </div>
+      
+
       
 
       <br>
       <br>
       <!--Goals-->
       <div class="container bootstrap snippets bootdeys">
-        <h3 style="text-align: center;">Achieve Your Social Media Marketing Goals with Our <span class="text-primary">Tailored Approach </span></h3>
+        <h3 style="text-align: center;">Personalized<span style="color: #E8A0BF;">Social Media Strategies </span>to Elevate Your Brand</h3>
         
-        <div class="row">
-            <div class="col-md-4 col-sm-6 content-card">
-                <div class="card-big-shadow">
-                    <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
-                        <div class="content">
-                            <!-- <h6 class="category">Best cards</h6> -->
-                            <h4 class="title"><a href="#">Increasing website traffic
-                            </a></h4>
-                            <p class="description">Create goals, and compelling content for users to Click-through and past your Social Media baits and visit your site. </p>
-                        </div>
-                    </div> <!-- end card -->
-                </div>
-            </div>
-            
-            <div class="col-md-4 col-sm-6 content-card">
-                <div class="card-big-shadow">
-                    <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
-                        <div class="content">
-                            <!-- <h6 class="category">Best cards</h6> -->
-                            <h4 class="title"><a href="#">Building conversions</a></h4>
-                            <p class="description">We create smart loops of advertisement to map metrics right from reach, delivery and conversions. </p>
-                        </div>
-                    </div> <!-- end card -->
-                </div>
-            </div>
-            
-            <div class="col-md-4 col-sm-6 content-card">
-                <div class="card-big-shadow">
-                    <div class="card card-just-text" data-background="color" data-color="yellow" data-radius="none">
-                        <div class="content">
-                            <!-- <h6 class="category">Best cards</h6> -->
-                            <h4 class="title"><a href="#">Raising brand awareness</a></h4>
-                            <p class="description">Maximize brand potential with dynamic social media content testing to achieve your marketing goals effortlessly. </p>
-                        </div>
-                    </div> <!-- end card -->
-                </div>
-            </div>
-            
-            <div class="col-md-4 col-sm-6 content-card">
-                <div class="card-big-shadow">
-                    <div class="card card-just-text" data-background="color" data-color="brown" data-radius="none">
-                        <div class="content">
-                            <!-- <h6 class="category">Best cards</h6> -->
-                            <h4 class="title"><a href="#">Creating a brand identity</a></h4>
-                            <p class="description">Create online brand recall and reliability with Shreeji Global Services' expert content strategy and design team. </p>
-                        </div>
-                    </div> <!-- end card -->
-                </div>
-            </div>
-            
-            <div class="col-md-4 col-sm-6 content-card">
-                <div class="card-big-shadow">
-                    <div class="card card-just-text" data-background="color" data-color="purple" data-radius="none">
-                        <div class="content">
-                            <!-- <h6 class="category">Best cards</h6> -->
-                            <h4 class="title"><a href="#">Improving interaction with key audiences</a></h4>
-                            <p class="description">"Social media is your brand's friendly and approachable face. Interact with customers and build trust through active listening.</p>
-                        </div>
-                    </div> <!-- end card -->
-                </div>
-            </div>
-            
-           
         </div>
-        </div>
+
+        <ul>
+          <li class="card" style="--accent-color: #BA90C6">
+            <div class="icon"> <i class="fa-brands fa-mobile"></i> </div>
+            <div class="title">Increasing website traffic</div>
+            <div class="content">Create goals, and compelling content for users to Click-through and past your Social Media baits and visit your site. </div>
+          </li>
+          <li class="card" style="--accent-color: #E8A0BF">
+            <div class="icon"><i class="fa-brands fa-lightbulb-o"></i></div>
+            <div class="title">Building conversions</div>
+            <div class="content">We create smart loops of advertisement to map metrics right from reach, delivery and conversions.</div>
+          </li>
+          <li class="card" style="--accent-color: #64BECF">
+            <div class="icon"><i class="fa-regular fa-users"></i></div>
+            <div class="title">Raising brand awareness</div>
+            <div class="content">Maximize brand potential with dynamic social media content testing to achieve your marketing goals effortlessly.</div>
+          </li>
+          
+          
+        </ul>
+        <ul>
+          <li class="card" style="--accent-color: #64BECF">
+            <div class="icon"><i class="fa-regular fa-bookmark"></i></div>
+            <div class="title">Creating a brand identity</div>
+            <div class="content">Create online brand recall and reliability with Shreeji Global Services' expert content strategy and design team.</div>
+          </li>
+          
+          <li class="card" style="--accent-color: #BA90C6">
+            <div class="icon"><i class="fa-regular fa-comments-o"></i></div>
+            <div class="title">Improving interaction</div>
+            <div class="content">Social media is your brand's friendly and approachable face. Interact with customers and build trust through active listening.</div>
+          </li>
+               
+          
+        </ul>
+
+
+
+
+
       
 
         
@@ -343,19 +464,24 @@ a:hover, a:focus {
       <div class="container">
         <div class="row row-30">
           <div class="col-lg-3 wow fadeInLeft">
-             <!--Brand--><a class="brand" href="index.html"><img class="brand-logo-dark" style="height:5rem;" src="images/sgs-high-resolution-logo-color-on-transparent-background.png" alt="" width="100" height="17"/><img class="brand-logo-light" src="images/sgs-low-resolution-logo-color-on-transparent-background.png" alt="" width="100" height="17"/></a>
-             <p class="footer-classic-description offset-top-0 offset-right-25">Shreeji Global Services is an agency dedicated to finding creative solutions for our clients through brand strategy, creative communication, and technology.</p>
+               <!--Brand--><a class="brand" href="index.html"><img class="brand-logo-dark" style="height:5rem;" src="images/sgs-high-resolution-logo-color-on-transparent-background.png" alt="" width="100" height="17"/><img class="brand-logo-light" src="images/sgs-high-resolution-logo-color-on-transparent-background.png" alt="" width="100" height="17"/></a>
+             
+            
           </div>
+          <div class="col-lg-3 wow fadeInLeft">
+            
+         <p class="footer-classic-description offset-top-0 offset-right-25">Shreeji Global Services is an agency dedicated to finding creative solutions for our clients through brand strategy, creative communication, and technology.</p>
+       </div>
           <div class="col-lg-3 col-sm-8 wow fadeInUp">
             <P class="footer-classic-title">contact info</P>
-            <div class="d-block offset-top-0">No.11, FF2, 1st Floor, New Bel Road, RMV 2nd Stage,<span class="d-lg-block">Bangalore – 560092</span></div><a class="d-inline-block accent-link" href="mailto:info@shreejigs.com">info@shreejigs.com</a><a class="d-inline-block" href="tel:+91 080 23415194">+91 080 23415194</a>
+            <div class="d-block offset-top-0"># 2,  3rd Floor. RMV 2nd Stage,<span class="d-lg-block">Bangalore – 560092</span></div><a class="d-inline-block accent-link" href="mailto:info@shreejigs.com">info@shreejigs.com</a><a class="d-inline-block" href="tel:+91 080 23415194">+91 080 23415194</a>
             <!-- <ul>
               <li>Mon-Thu:<span class="d-inline-block offset-left-10 text-white">9:30 AM - 9:00 PM</span></li>
               <li>Fri:<span class="d-inline-block offset-left-10 text-white">10:00 AM - 9:00 PM</span></li>
               <li>Sat:<span class="d-inline-block offset-left-10 text-white">10:00 AM - 3:00 PM</span></li>
             </ul> -->
           </div>
-          <div class="col-lg-2 col-sm-4 wow fadeInUp" data-wow-delay=".3s">
+          <!-- <div class="col-lg-2 col-sm-4 wow fadeInUp" data-wow-delay=".3s">
             <P class="footer-classic-title">Quick Links</P>
             <ul class="footer-classic-nav-list">
               <li><a href="index.html">Home</a></li>
@@ -364,31 +490,33 @@ a:hover, a:focus {
               <li><a href="#">Blog</a></li>
               <li><a href="contacts.html">Contacts</a></li>
             </ul>
-          </div>
-          <div class="col-lg-4 wow fadeInLeft" data-wow-delay=".2s">
-            <P class="footer-classic-title">Book an Appointment</P>
-            <form class="rd-mailform text-left footer-classic-subscribe-form" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+          </div> -->
+          <div class="col-lg-2 col-sm-4 wow fadeInUp" data-wow-delay=".2s">
+            <P class="footer-classic-title">Get In Touch</P>
+            <form class="rd-mailform text-left footer-classic-subscribe-form" data-form-output="form-output-global" data-form-type="contact" method="post">
               <!-- <div class="form-wrap">
                 <label class="form-label" for="subscribe-email">Your Email Address</label>
                 <input class="form-input" id="subscribe-email" type="email" name="email" data-constraints="@Email @Required">
               </div> -->
               <div class="form-button group-sm text-center text-lg-left">
-                <button class="button button-primary button-circle" type="submit">Click here</button>
+              <a href="contacts.html"> <button class="button button-primary button-circle" >Contact Us</button>
               </div>
             </form>
-            <p>Get in touch with our experts.</p>
+            
           </div>
+          
         </div>
       </div>
+      <br>
 
       <div class="container wow fadeInUp" data-wow-delay=".4s">
         <div class="footer-classic-aside">
-          <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span>. All Rights Reserved by ShreeJi Global Services. Design by <a href="https://www.templatemonster.com">TemplateMonster</a></p>
+          <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span>. All Rights Reserved by ShreeJi Global Services</a></p>
           <ul class="social-links">
-            <li><a class="fa fa-linkedin" href="#"></a></li>
+            <!-- <li><a class="fa fa-linkedin" href="#"></a></li>
             <li><a class="fa fa fa-twitter" href="#"></a></li>
             <li><a class="fa fa-facebook" href="#"></a></li>
-            <li><a class="fa fa-instagram" href="#"></a></li>
+            <li><a class="fa fa-instagram" href="#"></a></li> -->
           </ul>
         </div>
       </div>
